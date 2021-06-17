@@ -1,8 +1,29 @@
 <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <div>
         <h1>Hello There!</h1>
     </div>
 </head>
+
 <body>
     <p>First commit.</p>
+
+    <span x-text="BASE_ID"></span>
+    <span x-text="process.env.BASE_ID"></span>
+
+    <h3>List of parts</h3>
+    <div x-data="{ parts: [] }" x-init="parts = getParts()">
+        <ul>
+            <template x-for="item in getParts()">
+                <li x-text="`${item.name} ${item.cost}`"></li>
+            </template>
+        </ul>
+    </div>
+
+    <script>
+        function getParts() {
+            return [{ name: "recce rifle", cost: "1200" }]
+        }
+    </script>
 </body>
