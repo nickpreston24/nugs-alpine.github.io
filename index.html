@@ -1,47 +1,41 @@
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+
+
+
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body style="color: rgb(250, 234, 8); background-color: #334">
-    <h1>Nugs</h1>
-    <span x-text="BASE_ID"></span>
-    <span x-text="process.env.BASE_ID"></span>
 
-    <h2>
+    <sl-tab-group>
+        <sl-tab slot="nav" panel="general">General</sl-tab>
+        <sl-tab slot="nav" panel="custom">Custom</sl-tab>
 
-    </h2>
+        <sl-tab-panel name="general">
 
-    <i>Below is the current order</i>
-    <iframe class="airtable-embed"
-        src="https://airtable.com/embed/shraaIuwqj2wm3n3z?backgroundColor=blue&viewControls=on" frameborder="0"
-        onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+            <h2>Builds</h2>
+            <i>Below are full sample builds</i>
+            <iframe class="airtable-embed"
+                src="https://airtable.com/embed/shrdyDkisxdh7HSkb?backgroundColor=blue&layout=card&viewControls=on"
+                frameborder="0" onmousewheel="" width="100%" height="533"
+                style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-    <h2>Builds</h2>
-    <i>Below are full sample builds</i>
-    <iframe class="airtable-embed"
-        src="https://airtable.com/embed/shrdyDkisxdh7HSkb?backgroundColor=blue&layout=card&viewControls=on"
-        frameborder="0" onmousewheel="" width="100%" height="533"
-        style="background: transparent; border: 1px solid #ccc;"></iframe>
+        </sl-tab-panel>
+        <sl-tab-panel name="custom">
 
-    <h2>Recommended Parts</h2>
-    <ul style="color: red;">
-        <li><b>NOTE: Group by Build</b></li>
-    </ul>
-    <iframe class="airtable-embed"
-        src="https://airtable.com/embed/shr59vb7q50MCWDl6?backgroundColor=blue&viewControls=on" frameborder="0"
-        onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+            <h2>Recommended Parts</h2>
+            <ul style="color: red;">
+                <li><b>NOTE: Group by Build</b></li>
+            </ul>
+            <iframe class="airtable-embed"
+                src="https://airtable.com/embed/shr59vb7q50MCWDl6?backgroundColor=blue&viewControls=on" frameborder="0"
+                onmousewheel="" width="100%" height="533"
+                style="background: transparent; border: 1px solid #ccc;"></iframe>
+        </sl-tab-panel>
+    </sl-tab-group>
 
-    <!-- <div x-data="{ parts: [] }" x-init="parts = getParts()">
-        <ul>
-            <template x-for="item in getParts()">
-                <li x-text="`${item.name} ${item.cost}`"></li>
-            </template>
-        </ul>
-    </div>
 
-    <script>
-        function getParts() {
-            return [{ name: "recce rifle", cost: "1200" }]
-        }
-    </script> -->
 </body>
